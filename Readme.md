@@ -1,6 +1,7 @@
 Here’s a clean **`README.md`** for your mini project 👇
 
 ````markdown
+---
 # 🍕 Mini Project: Express Application for CRUD Operations on Pizza Store Items
 
 ## 📌 Objective
@@ -65,10 +66,27 @@ Update `package.json` to add a start script:
 Inside `routes/items.js`, implement routes:
 
 * **GET /items** → Get all pizzas
+
+![alt text](<pictures/Screenshot 2025-09-18 190954.png>)
+
 * **GET /items/\:id** → Get pizza by ID
+
+![alt text](<pictures/Screenshot 2025-09-18 191006.png>)
+
 * **POST /items** → Add new pizza
+
+![alt text](<pictures/Screenshot 2025-09-18 191258.png>)
+![alt text](<pictures/Screenshot 2025-09-18 192034.png>)
+
 * **PUT /items/\:id** → Update pizza details
+
+![alt text](<pictures/Screenshot 2025-09-18 192201.png>)
+![alt text](<pictures/Screenshot 2025-09-18 192216.png>)
+
 * **DELETE /items/\:id** → Delete pizza by ID
+
+![alt text](<pictures/Screenshot 2025-09-18 192058.png>)
+![alt text](<pictures/Screenshot 2025-09-18 192110.png>)
 
 *(You already created GET & DELETE routes. Add POST and PUT if needed.)*
 

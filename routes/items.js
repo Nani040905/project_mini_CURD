@@ -43,7 +43,7 @@ let pizzas = [
 routes.post('/', (req, res) => {
     pizzas.push(
         {
-            "id": req.query.id,
+            "id": parseInt(req.query.id),
             "name": req.query.name,
             "description": req.query.description,
             "price": parseInt(req.query.price),
@@ -100,13 +100,24 @@ routes.get('/',(req,res)=>{
 routes.get('/:id',(req,res)=>{
     const id = parseInt(req.params.id);
     const pizza = pizzas.filter(u => u.id === id );
-    res.send(pizza);
+    if (pizza.length === 0) {
+        return res.status(404).send(`Pizza with the id  ${id} not found.`);
+    }
+    else{
+        res.send(pizza);
+    }
 });
 
 routes.delete('/:id',(req,res) => {
     const id = parseInt(req.params.id);
     pizzas = pizzas.filter(u => u.id !== id);
-    res.send(`Pizza with id ${id} deleted successfully`);
+
+    if ((pizzas.filter(u=> u.id === id).length === 0)) {
+        return res.status(404).send(`Pizza with the id  ${id} not found.`);
+    }
+    else{
+        res.send(`Pizza with id ${id} deleted successfully`);
+    }
 });
 
 module.exports=routes;
